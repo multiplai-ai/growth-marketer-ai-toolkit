@@ -1,0 +1,159 @@
+# CLAUDE.md — [Your Name/Company] | How to Work With Me
+
+This template provides guidance to Claude Code when working with your repository.
+
+## TL;DR
+
+[One paragraph summary: Who you are, what you do, and how you like to collaborate.]
+
+---
+
+## Who I Am
+
+- **Name / role:** [Your name] — [Your role] at [Company]
+- **How I operate:** [Your operating style — e.g., data-driven, PLG-first, builder mindset]
+- **Reporting line:** Reports to [Your manager/CEO]
+- **Core partners:** [Teams you work with most]
+
+---
+
+## What Success Looks Like
+
+When you help me, optimize for:
+
+- [Outcome 1 — what you're trying to achieve]
+- [Outcome 2]
+- [Outcome 3]
+- [Outcome 4 — e.g., exec-ready communication]
+
+---
+
+## My Operating Principles
+
+Use these as default heuristics when you generate plans, docs, or recommendations:
+
+1) **[Principle 1]** — [Explanation]
+2) **[Principle 2]** — [Explanation]
+3) **[Principle 3]** — [Explanation]
+4) **[Principle 4]** — [Explanation]
+
+---
+
+## How to Communicate With Me
+
+### Voice & Style (Non-Negotiables)
+
+- [Style preference 1 — e.g., Direct. Practical. Action-oriented.]
+- [Style preference 2 — e.g., Skip fluffy preamble]
+- [Style preference 3 — e.g., Use crisp headings + bullets]
+- When writing "as me," match my voice: [describe your voice]
+
+### Default Structure for Most Answers
+
+1. **Recommendation** (1–3 bullets)
+2. **Why** (2–4 bullets; MECE if possible)
+3. **What we'll do next** (concrete steps, owners if known)
+4. **What to watch** (metrics + expected direction)
+5. **Risks / dependencies** (what could break, what we need)
+
+### Clarifying Questions
+
+If something is ambiguous, ask **1–3 targeted questions** max, like:
+
+- "What is the decision you want to make from this?"
+- "Who is the audience: execs, operators, or external?"
+- "What time horizon: next week vs next quarter?"
+
+If time is tight, proceed with **explicit assumptions** and label them.
+
+---
+
+## What I'm Focused on Right Now
+
+Prioritize outputs that help with:
+
+- [Current priority 1]
+- [Current priority 2]
+- [Current priority 3]
+
+---
+
+## Metrics & Analytics
+
+### Default North Star
+
+- [Your north star metric] — [Brief explanation of why]
+
+### How to Think About Measurement
+
+[Describe your preferred approach to metrics — decompositions, segmentation, etc.]
+
+### Segmentation Defaults
+
+When possible, segment by:
+
+- [Dimension 1]
+- [Dimension 2]
+- [Dimension 3]
+
+---
+
+## Skill Execution Framework (SAT)
+
+This repo uses the **SAT architecture** (Skills, Agents, Tools) to separate concerns.
+
+### The Three Layers
+
+**Layer 1: Skills (The Instructions)**
+- Markdown SOPs stored in `.claude/commands/` (invocable via `/skill-name`)
+- Each skill defines: objective, required inputs, which tools to use, expected outputs
+
+**Layer 2: Agents (The Decision-Maker)**
+- This is Claude's role — intelligent coordination
+- Read the relevant skill, run tools in sequence, handle failures gracefully
+
+**Layer 3: Tools (The Execution)**
+- Python scripts in `tools/` that do the actual work
+- API calls, data transformations, file operations
+- Credentials in `.env`
+
+### How to Operate
+
+1. **Look for existing tools first** before building new ones
+2. **Learn and adapt when things fail** — read errors, fix scripts, retest
+3. **STOP when skill expectations don't match reality** — report the gap
+4. **Keep skills current** — update as you learn better methods
+
+---
+
+## Repository Directory Structure
+
+[Describe your directory structure and what goes where]
+
+```
+your-repo/
+├── .claude/commands/    ← Skills (invocable via /skill-name)
+├── tools/               ← Python scripts for execution
+├── config/              ← Configuration files
+├── templates/           ← Reusable templates
+├── .env                 ← API keys (never commit)
+└── CLAUDE.md            ← This file
+```
+
+---
+
+## Guardrails
+
+- [Guardrail 1 — e.g., security considerations]
+- [Guardrail 2 — e.g., compliance requirements]
+- [Guardrail 3 — e.g., ethical boundaries]
+
+---
+
+## My Rules for Claude (Short Version)
+
+- [Rule 1 — e.g., Be direct. No fluff.]
+- [Rule 2 — e.g., Match my voice when writing as me]
+- [Rule 3 — e.g., Ask clarifying questions when ambiguity matters]
+- [Rule 4 — e.g., Separate facts vs hypotheses; propose validation]
+- [Rule 5 — e.g., Always end with "what to do next" + "what to watch"]

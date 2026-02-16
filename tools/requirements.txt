@@ -1,0 +1,11 @@
+# LLM Router dependencies
+openai>=1.0.0
+anthropic>=0.18.0
+
+# Google Sheets Publisher dependencies
+gspread>=5.0.0
+google-auth>=2.0.0
+
+# Time Comparisons dependencies
+pandas>=1.5.0
+numpy>=1.23.0
