@@ -208,6 +208,17 @@ growth-marketer-ai-toolkit/
     └── seo-audit-example.md
 ```
 
+## Updating
+
+To get the latest skills:
+
+```
+/plugin marketplace update growth-marketer-toolkit
+/plugin update growth-marketer-toolkit@growth-marketer-toolkit
+```
+
+Then restart Claude Code to apply changes.
+
 ## Requirements
 
 - [Claude Code](https://claude.ai/code) CLI
@@ -222,6 +233,17 @@ Contributions welcome! Please:
 1. Fork the repo
 2. Create a feature branch
 3. Submit a PR with a clear description
+
+## Changelog
+
+### v1.0.0 (2026-02-16)
+- Initial public release
+- 13 ad audit skills (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, creative, landing, budget, plan, competitor)
+- SEO and CRO audit skills
+- Dev workflow skills (explore, plan, execute, review, peer-review, document)
+- Content writing skill
+- Utility skills (prompt-optimizer, create-skill)
+- Python tools for Sheets publishing and time calculations
 
 ## License
 
