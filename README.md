@@ -1,6 +1,29 @@
 # Growth Marketer AI Toolkit
 
-A collection of Claude Code skills and tools for growth marketers. Copy-paste into your own projects and start auditing ad accounts, planning campaigns, and creating content with AI-powered workflows.
+A collection of Claude Code skills and tools for growth marketers. Audit ad accounts, plan campaigns, and create content with AI-powered workflows.
+
+## Installation
+
+### Option 1: Plugin Marketplace (Recommended)
+
+Add this toolkit as a Claude Code plugin marketplace:
+
+```
+/plugin marketplace add multiplai-ai/growth-marketer-ai-toolkit
+/plugin install growth-marketer-toolkit@growth-marketer-toolkit
+```
+
+Skills are then available as `/growth-marketer-toolkit:ads`, `/growth-marketer-toolkit:seo-audit`, etc.
+
+### Option 2: Manual Copy
+
+```bash
+# Clone and copy skills to your project
+git clone https://github.com/multiplai-ai/growth-marketer-ai-toolkit.git
+cp -r growth-marketer-ai-toolkit/.claude/commands/* your-project/.claude/commands/
+```
+
+Skills are then available as `/ads`, `/seo-audit`, etc. (shorter names, but requires manual updates).
 
 ## What's Inside
 
@@ -91,41 +114,34 @@ Python scripts for deterministic execution:
 
 ## Quick Start
 
-### 1. Clone or copy skills to your project
+### 1. Install the toolkit
 
-```bash
-# Option A: Clone entire repo
-git clone https://github.com/YOUR_USERNAME/growth-marketer-ai-toolkit.git
-
-# Option B: Copy specific skills
-cp -r growth-marketer-ai-toolkit/.claude/commands/ads your-project/.claude/commands/
+```
+/plugin marketplace add multiplai-ai/growth-marketer-ai-toolkit
+/plugin install growth-marketer-toolkit@growth-marketer-toolkit
 ```
 
-### 2. Install skill dependencies (if using tools)
+### 2. Run a skill
+
+```
+/growth-marketer-toolkit:ads audit
+```
+
+### 3. (Optional) Install tool dependencies
+
+If using the Python tools in `tools/`:
 
 ```bash
 pip install -r tools/requirements.txt
 ```
 
-### 3. Configure environment (if using tools)
-
-Create `.env` in your project root:
+Create `.env` for API access:
 
 ```bash
 OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 GOOGLE_SERVICE_ACCOUNT_PATH=~/.config/google-service-account.json
 GOOGLE_SHEETS_ID=your-spreadsheet-id
-```
-
-### 4. Use skills in Claude Code
-
-```bash
-# Start Claude Code in your project
-claude
-
-# Run a skill
-/ads audit
 ```
 
 ## Customization
@@ -149,6 +165,9 @@ growth-marketer-ai-toolkit/
 ├── README.md
 ├── INSTALLATION.md
 ├── LICENSE
+├── .claude-plugin/              # Marketplace config
+│   ├── plugin.json
+│   └── marketplace.json
 ├── .claude/commands/
 │   ├── ads/                      # 13 ad audit skills
 │   │   ├── ads.md                # Main orchestrator
