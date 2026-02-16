@@ -1,0 +1,21 @@
+{
+  "name": "growth-marketer-toolkit",
+  "owner": {
+    "name": "Multipli AI",
+    "email": "hello@multipli.ai"
+  },
+  "metadata": {
+    "description": "Production-ready Claude Code skills for growth marketers - ad audits across Google, Meta, LinkedIn, TikTok, Microsoft; SEO/CRO analysis; campaign planning; and AI-powered content creation.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "growth-marketer-toolkit",
+      "source": "./",
+      "description": "Full toolkit: 13 ad audit skills, SEO/CRO analysis, campaign planning, content creation, and dev workflows",
+      "version": "1.0.0",
+      "category": "marketing",
+      "tags": ["growth", "marketing", "ads", "audit", "ppc", "seo", "cro"]
+    }
+  ]
+}

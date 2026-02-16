@@ -1,0 +1,23 @@
+{
+  "name": "growth-marketer-toolkit",
+  "description": "Claude Code skills for growth marketers - ad audits, SEO/CRO analysis, campaign planning, and content creation",
+  "version": "1.0.0",
+  "author": {
+    "name": "Multipli AI"
+  },
+  "homepage": "https://github.com/multiplai-ai/growth-marketer-ai-toolkit",
+  "repository": "https://github.com/multiplai-ai/growth-marketer-ai-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "growth-marketing",
+    "ads-audit",
+    "google-ads",
+    "meta-ads",
+    "linkedin-ads",
+    "tiktok-ads",
+    "seo",
+    "cro",
+    "ppc",
+    "campaign-planning"
+  ]
+}
