@@ -81,10 +81,11 @@ Structured software development workflow:
 | `/peer-review` | Analyze external code review feedback |
 | `/document` | Update docs and README |
 
-#### Content (1 skill)
+#### Content (2 skills)
 
 | Skill | Description |
 |-------|-------------|
+| `/campaign-brief` | Interactive GACCS campaign brief generator — walks you through Goals, Audience, Creative, Channels, Success metrics |
 | `/writing` | Voice-driven content creation for LinkedIn |
 
 #### Utilities (2 skills)
