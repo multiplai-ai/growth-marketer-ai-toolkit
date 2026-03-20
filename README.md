@@ -1,101 +1,143 @@
 # Growth Marketer AI Toolkit
 
-A collection of Claude Code skills and tools for growth marketers. Audit ad accounts, plan campaigns, and create content with AI-powered workflows.
+A modular collection of Claude Code skills for growth marketers. 65 skills across 6 components — use them all or pick the components you need.
 
 ## Installation
 
-### Option 1: Plugin Marketplace (Recommended)
-
-Add this toolkit as a Claude Code plugin marketplace:
-
-```
-/plugin marketplace add multiplai-ai/growth-marketer-ai-toolkit
-/plugin install growth-marketer-toolkit@growth-marketer-toolkit
-```
-
-Skills are then available as `/growth-marketer-toolkit:ads`, `/growth-marketer-toolkit:seo-audit`, etc.
-
-### Option 2: Manual Copy
+### Full Toolkit
 
 ```bash
-# Clone and copy skills to your project
 git clone https://github.com/multiplai-ai/growth-marketer-ai-toolkit.git
 cp -r growth-marketer-ai-toolkit/.claude/commands/* your-project/.claude/commands/
 ```
 
-Skills are then available as `/ads`, `/seo-audit`, etc. (shorter names, but requires manual updates).
+### Single Component
 
-## What's Inside
+Only want ads? Or just the strategy suite? Copy individual directories:
 
-### Skills (`.claude/commands/`)
+```bash
+# Just the ads audit system
+cp -r growth-marketer-ai-toolkit/.claude/commands/ads your-project/.claude/commands/
 
-Skills are markdown-based workflows that Claude Code executes. Invoke them with `/skill-name` in Claude Code.
+# Just the strategy suite
+cp -r growth-marketer-ai-toolkit/.claude/commands/strategy your-project/.claude/commands/
 
-#### Ads Audit System (13 skills)
+# Mix and match
+cp -r growth-marketer-ai-toolkit/.claude/commands/content your-project/.claude/commands/
+cp -r growth-marketer-ai-toolkit/.claude/commands/cto your-project/.claude/commands/
+```
 
-Full multi-platform paid advertising audit and optimization:
+Skills are available as `/component:skill-name` in Claude Code (e.g., `/ads:ads-google`, `/strategy:positioning-strategy`).
 
-| Skill | Description |
+## Components
+
+### 1. Strategy Suite (8 skills)
+
+Full marketing strategy pipeline — from discovery through design systems.
+
+| Skill | What it does |
 |-------|-------------|
-| `/ads audit` | Full multi-platform audit with parallel analysis |
-| `/ads google` | Google Ads deep analysis (Search, PMax, YouTube) |
-| `/ads meta` | Meta Ads deep analysis (FB, IG, Advantage+) |
-| `/ads youtube` | YouTube Ads specific analysis |
-| `/ads linkedin` | LinkedIn Ads deep analysis (B2B, Lead Gen) |
-| `/ads tiktok` | TikTok Ads deep analysis (Creative, Shop, Smart+) |
-| `/ads microsoft` | Microsoft/Bing Ads deep analysis |
-| `/ads creative` | Cross-platform creative quality audit |
-| `/ads landing` | Landing page quality assessment |
-| `/ads budget` | Budget allocation and bidding strategy review |
-| `/ads plan <type>` | Strategic ad planning with industry templates |
-| `/ads competitor` | Competitor ad intelligence analysis |
+| `/strategy:discovery-intake` | Structured discovery and client intake process |
+| `/strategy:positioning-strategy` | Competitive positioning and market differentiation |
+| `/strategy:brand-strategy` | Brand voice, key messages, value props, proof points, USPs |
+| `/strategy:icp-personas` | Ideal customer profiles and buyer personas |
+| `/strategy:content-strategy` | Content pillars, formats, cadence, distribution plan |
+| `/strategy:design-systems` | Design system creation and documentation |
+| `/strategy:design-extract` | Reverse-engineer design tokens from a live URL |
+| `/strategy:strategy-suite-sop` | How the strategy suite works (start here) |
 
-**Reference docs included:** Scoring system, benchmarks, bidding strategies, budget allocation, platform specs, conversion tracking, compliance, and platform-specific audit checklists.
+**Best for:** Starting a new brand, onboarding a client, building a strategy foundation.
 
-**Industry templates:** SaaS, e-commerce, local service, B2B enterprise, info products, mobile app, real estate, healthcare, finance, agency.
+### 2. Content Production (9 skills)
 
-#### Marketing (2 skills)
+Write, plan, produce, and QC content at scale.
 
-| Skill | Description |
+| Skill | What it does |
 |-------|-------------|
-| `/seo-audit` | SEO audit with GSC/GA4 data analysis |
-| `/cro-audit` | CRO audit for webpages and landing pages |
+| `/content:writing` | Voice-driven long-form and social content creation |
+| `/content:content-brief` | Structured content briefs from strategy inputs |
+| `/content:content-calendar` | Monthly content calendar with cadence and themes |
+| `/content:content-campaign` | Multi-channel campaign planning and execution |
+| `/content:produce` | End-to-end content production pipeline |
+| `/content:cro` | CRO audit for webpages and landing pages |
+| `/content:seo-qc` | SEO/AEO quality check for draft articles |
+| `/content:visual-content` | Generate shareable infographics, diagrams, frameworks |
+| `/content:ai-tool-review` | Product-review style AI tool evaluation articles |
 
-#### Growth (2 skills)
+**Best for:** Content teams, solo marketers scaling output, agency content ops.
 
-| Skill | Description |
+### 3. Ads Audit System (13 skills)
+
+Full multi-platform paid advertising audit and optimization.
+
+| Skill | What it does |
 |-------|-------------|
-| `/hiring` | Growth operator hiring framework and interview rubrics |
-| `/learning` | Learning opportunity identification |
+| `/ads:ads` | Full multi-platform audit with parallel analysis |
+| `/ads:ads-google` | Google Ads deep analysis (Search, PMax, YouTube) |
+| `/ads:ads-meta` | Meta Ads deep analysis (FB, IG, Advantage+) |
+| `/ads:ads-youtube` | YouTube Ads specific analysis |
+| `/ads:ads-linkedin` | LinkedIn Ads deep analysis (B2B, Lead Gen) |
+| `/ads:ads-tiktok` | TikTok Ads deep analysis (Creative, Shop, Smart+) |
+| `/ads:ads-microsoft` | Microsoft/Bing Ads deep analysis |
+| `/ads:ads-creative` | Cross-platform creative quality audit |
+| `/ads:ads-landing` | Landing page quality assessment |
+| `/ads:ads-budget` | Budget allocation and bidding strategy review |
+| `/ads:ads-plan` | Strategic ad planning with industry templates |
+| `/ads:ads-competitor` | Competitor ad intelligence analysis |
+| `/ads:ads-audit` | Full account audit with health scoring |
 
-#### Dev Workflow (6 skills)
+**Included:** 12 reference docs (scoring, benchmarks, bidding strategies, platform specs, compliance) + 11 industry templates (SaaS, e-commerce, B2B enterprise, healthcare, finance, agency, and more).
 
-Structured software development workflow:
+**Best for:** PPC managers, agencies running audits, anyone managing ad spend.
 
-| Skill | Description |
+### 4. Distribution (1 skill)
+
+| Skill | What it does |
 |-------|-------------|
-| `/explore` | Understand codebase and requirements |
-| `/create-plan` | Break work into phased implementation plan |
-| `/execute` | Build with phase-by-phase implementation |
-| `/review` | Self-check against quality checklist |
-| `/peer-review` | Analyze external code review feedback |
-| `/document` | Update docs and README |
+| `/distribution:seo` | SEO audit with GSC/GA4 data analysis |
 
-#### Content (2 skills)
+### 5. Ops (5 skills)
 
-| Skill | Description |
+Marketing operations and utility workflows.
+
+| Skill | What it does |
 |-------|-------------|
-| `/campaign-brief` | Interactive GACCS campaign brief generator — walks you through Goals, Audience, Creative, Channels, Success metrics |
-| `/writing` | Voice-driven content creation for LinkedIn |
+| `/ops:growth-operator-hiring` | Growth operator hiring framework and interview rubrics |
+| `/ops:scrape-website` | Scrape blog index pages to markdown for analysis |
+| `/ops:to-gamma` | Export content to Gamma presentations |
+| `/ops:to-sheets` | Export data to Google Sheets |
+| `/ops:to-notion` | Export content to Notion |
 
-#### Utilities (2 skills)
+**Best for:** Hiring growth roles, moving content between platforms.
 
-| Skill | Description |
+### 6. CTO / Dev Workflow (6 skills)
+
+Structured development lifecycle for building marketing tools and automations.
+
+| Skill | What it does |
 |-------|-------------|
-| `/prompt-optimizer` | Transform rough prompts into optimized versions |
-| `/create-skill` | Create new skills with proper structure |
+| `/cto:explore` | Understand codebase and requirements |
+| `/cto:build-workflow` | Create new skills, agents, or hybrid workflows |
+| `/cto:dev-process` | Full dev lifecycle orchestrator |
+| `/cto:document` | Generate and update documentation |
+| `/cto:learning-opportunity` | Turn problems into structured learning |
+| `/cto:prompt-optimizer` | Transform rough prompts into optimized versions |
 
-### Tools (`tools/`)
+**Best for:** Marketers building their own tools, prompt engineering, automation development.
+
+## Quick Start
+
+1. **Copy the skills** you want into your project's `.claude/commands/` directory
+2. **Run a skill** in Claude Code: `/ads:ads-google`, `/strategy:discovery-intake`, etc.
+3. **Customize** — skills reference generic paths like `strategy/`, `content/`, `voice-synthesis.md`. Create these in your project to match your brand.
+
+### Customization Tips
+
+- **Voice profile:** The `/content:writing` skill works best with a `voice-synthesis.md` file describing your brand's tone and style. Use `templates/voice-system-template.md` to create one.
+- **Strategy inputs:** Content skills reference strategy outputs (positioning, brand strategy, ICP). Run the strategy suite first, or point the skills at your existing strategy docs.
+- **Industry templates:** Edit `ads/industry-templates/` to match your business vertical.
+
+## Tools (`tools/`)
 
 Python scripts for deterministic execution:
 
@@ -105,146 +147,51 @@ Python scripts for deterministic execution:
 | `sheets_publish.py` | Publish markdown tables to Google Sheets |
 | `time_comparisons.py` | MTD pacing, weekly pace, period-over-period calculations |
 
-### Templates (`templates/`)
-
-| Template | Description |
-|----------|-------------|
-| `voice-system-template.md` | Framework for creating your voice profile |
-| `dev-workflow.md` | One-pager explaining the dev workflow |
-| `CLAUDE.md.template` | Template for project-level Claude Code instructions |
-
-## Quick Start
-
-### 1. Install the toolkit
-
-```
-/plugin marketplace add multiplai-ai/growth-marketer-ai-toolkit
-/plugin install growth-marketer-toolkit@growth-marketer-toolkit
-```
-
-### 2. Run a skill
-
-```
-/growth-marketer-toolkit:ads audit
-```
-
-### 3. (Optional) Install tool dependencies
-
-If using the Python tools in `tools/`:
-
 ```bash
 pip install -r tools/requirements.txt
 ```
-
-Create `.env` for API access:
-
-```bash
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
-GOOGLE_SERVICE_ACCOUNT_PATH=~/.config/google-service-account.json
-GOOGLE_SHEETS_ID=your-spreadsheet-id
-```
-
-## Customization
-
-### Voice Profile
-
-The `/writing` skill needs your voice profile. Fill out the blank sections in `.claude/commands/content/writing.md` or use `templates/voice-system-template.md` to create a detailed profile.
-
-### Industry Templates
-
-The `/ads plan` skill uses industry-specific templates. Edit the templates in `.claude/commands/ads/industry-templates/` to match your business.
-
-### CLAUDE.md
-
-Create a `CLAUDE.md` in your project root to give Claude Code context about your project. Use `templates/CLAUDE.md.template` as a starting point.
 
 ## File Structure
 
 ```
 growth-marketer-ai-toolkit/
-├── README.md
-├── INSTALLATION.md
-├── LICENSE
-├── .claude-plugin/              # Marketplace config
-│   ├── plugin.json
-│   └── marketplace.json
 ├── .claude/commands/
-│   ├── ads/                      # 13 ad audit skills
-│   │   ├── ads.md                # Main orchestrator
-│   │   ├── ads-google.md
-│   │   ├── ads-meta.md
-│   │   ├── ...
-│   │   ├── references/           # 12 reference docs
-│   │   └── industry-templates/   # 11 industry templates
-│   ├── marketing/
-│   │   ├── seo-audit.md
-│   │   └── cro-audit.md
-│   ├── growth/
-│   │   ├── hiring.md
-│   │   └── learning.md
-│   ├── dev-workflow/
-│   │   ├── explore.md
-│   │   ├── create-plan.md
-│   │   ├── execute.md
-│   │   ├── review.md
-│   │   ├── peer-review.md
-│   │   └── document.md
-│   ├── content/
-│   │   └── writing.md
-│   └── utilities/
-│       ├── prompt-optimizer.md
-│       └── create-skill.md
-├── tools/
-│   ├── llm_router.py
-│   ├── sheets_publish.py
-│   ├── time_comparisons.py
-│   └── requirements.txt
-├── templates/
-│   ├── voice-system-template.md
-│   ├── dev-workflow.md
-│   └── CLAUDE.md.template
-└── examples/
-    ├── ads-audit-example.md
-    └── seo-audit-example.md
+│   ├── strategy/              # 8 strategy skills
+│   ├── content/               # 9 content production skills
+│   ├── ads/                   # 13 ad audit skills
+│   │   ├── references/        #   12 reference docs
+│   │   └── industry-templates/#   11 industry templates
+│   ├── distribution/          # 1 SEO skill
+│   ├── ops/                   # 5 operations skills
+│   └── cto/                   # 6 dev workflow skills
+├── tools/                     # Python utilities
+├── templates/                 # Starter templates
+└── examples/                  # Example outputs
 ```
 
-## Updating
+## Changelog
 
-To get the latest skills:
+### v2.0.0 (2026-03-20)
+- Reorganized into 6 modular components (strategy, content, ads, distribution, ops, cto)
+- Added strategy suite: discovery, positioning, brand strategy, ICP, content strategy, design systems, design extract
+- Added content production: writing, briefs, calendars, campaigns, produce, CRO, SEO QC, visual content, AI tool reviews
+- Added ops: hiring, scrape, export utilities (Gamma, Sheets, Notion)
+- Updated CTO skills: build-workflow, dev-process, prompt-optimizer
+- Updated all ads skills to latest versions
+- 65 total skill files (up from 27 in v1.0)
 
-```
-/plugin marketplace update growth-marketer-toolkit
-/plugin update growth-marketer-toolkit@growth-marketer-toolkit
-```
-
-Then restart Claude Code to apply changes.
+### v1.0.0 (2026-02-16)
+- Initial public release
+- 13 ad audit skills, SEO/CRO, dev workflow, content writing, utilities
 
 ## Requirements
 
 - [Claude Code](https://claude.ai/code) CLI
 - Python 3.9+ (for tools)
-- API keys for OpenAI and/or Anthropic (for `llm_router.py`)
-- Google service account (for `sheets_publish.py`)
 
 ## Contributing
 
-Contributions welcome! Please:
-
-1. Fork the repo
-2. Create a feature branch
-3. Submit a PR with a clear description
-
-## Changelog
-
-### v1.0.0 (2026-02-16)
-- Initial public release
-- 13 ad audit skills (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, creative, landing, budget, plan, competitor)
-- SEO and CRO audit skills
-- Dev workflow skills (explore, plan, execute, review, peer-review, document)
-- Content writing skill
-- Utility skills (prompt-optimizer, create-skill)
-- Python tools for Sheets publishing and time calculations
+Contributions welcome! Fork, branch, PR.
 
 ## License
 
@@ -252,6 +199,6 @@ MIT License — see [LICENSE](LICENSE)
 
 ## Author
 
-[Hanna Huffman](https://linkedin.com/in/hannahuffman) — Growth Marketing Leader
+[Hanna Huffman](https://linkedin.com/in/hannahuffman) — Founder, MultiplAI Growth Systems
 
 Built with [Claude Code](https://claude.ai/code)

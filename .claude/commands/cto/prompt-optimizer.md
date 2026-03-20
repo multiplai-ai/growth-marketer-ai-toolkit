@@ -16,8 +16,8 @@ When the user provides a rough prompt or describes a desired outcome, ask these 
 ### Required Questions (ask all)
 
 1. **Target model**: Which model will run this prompt?
-   - Claude (Opus 4.5 / Sonnet)
-   - ChatGPT (GPT-5 Pro / o3)
+   - Claude (Opus / Sonnet)
+   - ChatGPT (GPT-4o / o-series)
    - Both (generate two versions)
 
 2. **Output type**: What kind of output do you need?
@@ -101,7 +101,7 @@ Verification checklist (check before submitting):
 ### For ChatGPT: Signature Block Pattern
 
 ```
-[Recommended Model]: GPT-5 Pro / [Reasoning mode] with [tools]
+[Recommended Model]: GPT-4o / [Reasoning mode] with [tools]
 [Role]: [Expert persona with specific expertise]
 [Scope]: In-scope: [what to cover] | Out-of-scope: [what to exclude]
 [Format]: [Sections, structure, output type]
@@ -258,7 +258,7 @@ Present the optimized prompt to the user with:
 > "Help me write a prompt to research the competitive landscape for AI writing tools"
 
 ### Example Questions
-1. Target model? → "Claude Opus 4.5"
+1. Target model? → "Claude Opus"
 2. Output type? → "Research report"
 3. Depth? → "Comprehensive deep-dive"
 4. Success criteria? → "Understand top 10 competitors, their positioning, pricing, and differentiation"
@@ -295,7 +295,7 @@ Success looks like:
 - Clear understanding of the top 10 players and how they differentiate
 - Pricing transparency across tiers (or acknowledgment where data is unavailable)
 - Actionable insights on positioning gaps and opportunities
-- Recent enough to reflect 2024-2025 market dynamics
+- Recent enough to reflect current market dynamics
 </task>
 
 <output_format>
@@ -325,4 +325,4 @@ Verification checklist:
 
 ## Relationship to PromptMaster
 
-This skill provides a lighter, guided workflow specifically optimized for dual-model output (Claude vs ChatGPT). For more comprehensive prompt orchestration with GPT-specific features (Aulë oversight, advanced routing, mode layering), see the full PromptMaster v3 framework.
+This skill provides a lighter, guided workflow specifically optimized for dual-model output (Claude vs ChatGPT). For more comprehensive prompt orchestration with GPT-specific features (advanced routing, mode layering), see the full PromptMaster v3 framework.

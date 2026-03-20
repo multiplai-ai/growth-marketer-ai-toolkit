@@ -84,8 +84,9 @@ Hard rules — never violate these:
 
 Load these on-demand as needed — do NOT load all at startup.
 
-**Path resolution:** References are at `.claude/commands/ads/references/` relative to repo root.
-When sub-skills or agents reference `references/*.md`, resolve to the references directory.
+**Path resolution:** All references are installed at `~/.claude/skills/ads/references/`.
+When sub-skills or agents reference `ads/references/*.md`, resolve to
+`~/.claude/skills/ads/references/*.md`.
 
 - `references/scoring-system.md` — Weighted scoring algorithm and grading thresholds
 - `references/benchmarks.md` — Industry benchmarks by platform (CPC, CTR, CVR, ROAS)

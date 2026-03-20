@@ -28,7 +28,7 @@ description: >
 - Note keyword/audience gaps (opportunities competitors are missing)
 
 ### 3. Platform Selection
-- Load industry template from `industry-templates/` directory
+- Load industry template from `assets/` directory
 - Match business type to recommended platform mix
 - Read `ads/references/budget-allocation.md` for platform selection matrix
 - Read `ads/references/conversion-tracking.md` for tracking setup requirements
@@ -146,7 +146,7 @@ Before launching any ads, ensure tracking is configured:
 
 ## Industry Templates
 
-Load from `industry-templates/` directory based on detected or specified business type:
+Load from `assets/` directory based on detected or specified business type:
 - `saas.md` — SaaS companies
 - `ecommerce.md` — E-commerce stores
 - `local-service.md` — Local service businesses
