@@ -16,6 +16,14 @@
       "version": "1.0.0",
       "category": "marketing",
       "tags": ["growth", "marketing", "ads", "audit", "ppc", "seo", "cro"]
+    },
+    {
+      "name": "workflow-request",
+      "source": "./plugins/workflow-request",
+      "description": "Guided MultiplAI intake for new workflows, improvements, and issues",
+      "version": "0.1.0",
+      "category": "project-management",
+      "tags": ["workflow", "intake", "notion", "multiplai"]
     }
   ]
 }

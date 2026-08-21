@@ -4,6 +4,17 @@ A modular collection of Claude Code skills for growth marketers. 65 skills acros
 
 ## Installation
 
+### MultiplAI Workflow Request Only
+
+Clients can install the guided build-request intake without installing the full marketing toolkit:
+
+```text
+/plugin marketplace add multiplai-ai/growth-marketer-ai-toolkit
+/plugin install workflow-request@growth-marketer-toolkit
+```
+
+MultiplAI supplies each client with a private `MULTIPLAI_WORKFLOW_REQUEST_KEY`. The plugin also links to the public Notion Form when agent submission is unavailable.
+
 ### Full Toolkit
 
 ```bash

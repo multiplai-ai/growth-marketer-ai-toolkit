@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "workflow-request",
+  "version": "0.1.0",
+  "description": "Guided MultiplAI workflow, feature, and bug request intake with approved submission to the client queue.",
+  "author": {
+    "name": "MultiplAI Growth"
+  },
+  "homepage": "https://www.multiplaigrowth.com"
+}
