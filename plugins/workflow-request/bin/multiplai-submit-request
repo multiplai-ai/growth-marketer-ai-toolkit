@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""Submit an approved workflow request to the MultiplAI intake API."""
+
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+
+DEFAULT_URL = "https://www.multiplaigrowth.com/api/workflow-requests"
+
+
+def fail(message: str, code: int = 1) -> None:
+    print(f"Submission failed: {message}", file=sys.stderr)
+    raise SystemExit(code)
+
+
+def main() -> None:
+    if len(sys.argv) != 2:
+        fail("usage: multiplai-submit-request /absolute/path/to/payload.json", 2)
+
+    key = os.environ.get("MULTIPLAI_WORKFLOW_REQUEST_KEY", "").strip()
+    if not key:
+        fail("MULTIPLAI_WORKFLOW_REQUEST_KEY is not configured")
+
+    path = Path(sys.argv[1]).expanduser()
+    if not path.is_absolute():
+        fail("payload path must be absolute")
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        fail(f"could not read valid JSON payload: {error}")
+    if not isinstance(payload, dict):
+        fail("payload must be a JSON object")
+
+    payload["source"] = "Claude Code"
+    body = json.dumps(payload).encode("utf-8")
+    url = os.environ.get("MULTIPLAI_WORKFLOW_REQUEST_URL", DEFAULT_URL).strip() or DEFAULT_URL
+    request = urllib.request.Request(
+        url,
+        data=body,
+        method="POST",
+        headers={
+            "Authorization": f"Bearer {key}",
+            "Content-Type": "application/json",
+            "User-Agent": "MultiplAI-Workflow-Request-Claude-Code/1",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            result = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        detail = error.read().decode("utf-8", errors="replace")[:500]
+        fail(f"server returned HTTP {error.code}: {detail}")
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
+        fail(str(error))
+
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
